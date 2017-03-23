@@ -9,7 +9,7 @@ window.onload = function gettingFunnyWithChuck() {
     console.log('the returned data is:', data)
 
     if ( randomJoke ==='random/'){
-      const comedy = data.value;
+      const comedy = data.value[20];
       const idkLength = comedy.length;
       const jokes= [];
 
