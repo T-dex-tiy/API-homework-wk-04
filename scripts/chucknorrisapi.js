@@ -1,6 +1,16 @@
 window.onload = function gettingFunnyWithChuck() {
 
-  const randomJoke = 'random/'
+  function buwHaHaHa () {
+  var value = [Math.floor(Math.random() * 100)];
+  console.log(value);
+   return value;
+};
+
+let jokeNum = buwHaHaHa();
+
+
+
+  const randomJoke = 'id/'
   const url = 'http://api.icndb.com/jokes'+ randomJoke
 
   $.ajax({
@@ -8,8 +18,9 @@ window.onload = function gettingFunnyWithChuck() {
   }).done(function(data){
     console.log('the returned data is:', data)
 
-    if ( randomJoke ==='random/'){
-      const comedy = data.value[20];
+    if ( randomJoke ==='id/'){
+
+      const comedy = data.value;
       const idkLength = comedy.length;
       const jokes= [];
 
@@ -17,7 +28,7 @@ window.onload = function gettingFunnyWithChuck() {
       for (let i = 0; i < idkLength; i++){
       jokes.push(comedy[i])
       }
-    console.log(comedy);
+    console.log(jokes[jokeNum]);
     }
 
 
