@@ -29,8 +29,15 @@ let jokeNum = buwHaHaHa();
       jokes.push(comedy[i])
       }
     console.log(jokes[jokeNum]);
+    return jokes[jokeNum];
     }
 
+let refresh = document.querySelector('p.joke');
+      let btn = document.querySelector("button.buttons"); btn.addEventListener('click', function(){
+        letter = refresh.value;
+        console.log(letter);
+        return letter;
+      });
 
  })
 }
