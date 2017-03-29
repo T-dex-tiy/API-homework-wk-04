@@ -29,7 +29,12 @@ html, body {
   margin-top: 300px;
   border-top: 300px;
   width: 100%;
-  background: white;
+  background:white;
+  opacity: .5;
+  border: 1px solid black;
+  font-size:26px;
+  font-family: sans-serif;
+  font: helvetica;
 }
 .random {
    width: <property unused>

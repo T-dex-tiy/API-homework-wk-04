@@ -32,10 +32,10 @@ var btn = document.querySelector("button");
       }
 
       document.getElementById('input').innerHTML= jokes[jokeNum].joke;
-    // document.getElementById('input').innerHTML= jokes[jokeNum];
+
     console.log(jokes[jokeNum]);
     return jokes[jokeNum];
-      // document.getElementById('input').innerHTML= hardyHar.joke;
+    
 
 
 
