@@ -29,13 +29,19 @@ var btn = document.querySelector("button");
 
       for (let i = 0; i < idkLength; i++){
       jokes.push(comedy[i])
+
+      }
+      let humorless= jokes[jokeNum].joke;
+
+      function moreHardyHar(humorless){
+      document.getElementById('input').innerHTML= humorless;
       }
 
-      document.getElementById('input').innerHTML= jokes[jokeNum].joke;
 
     console.log(jokes[jokeNum]);
+    moreHardyHar(humorless);
     return jokes[jokeNum];
-    
+
 
 
 

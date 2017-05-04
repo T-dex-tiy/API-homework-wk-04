@@ -17,8 +17,9 @@
   }*/
 
 html, body {
-  background-image: url("img/chucknorris.jpeg");
-  background-color: red;
+  background: url("img/chucknorris.jpeg") no-repeat center center fixed;
+  background-color: black;
+
 }
 
 .random.joke{
@@ -32,13 +33,10 @@ html, body {
   background:white;
   opacity: .5;
   border: 1px solid black;
-  font-size:26px;
-  font-family: sans-serif;
-  font: helvetica;
+  font-size:18px;
+  font-family: helvetica sans-serif;
 }
 .random {
-   width: <property unused>
-   height: <property unused>;
    align-items: flex-start;
    height: 100px;
    flex-grow: 0;
