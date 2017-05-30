@@ -10,7 +10,7 @@ let hardyHar=[];
 var btn = document.querySelector("button");
 
   const randomJoke = 'id/'
-  const url = 'http://api.icndb.com/jokes'+ randomJoke
+  const url = '//api.icndb.com/jokes'+ randomJoke
 
   $.ajax({
     url: url
