@@ -1,4 +1,4 @@
-window.onload = function gettingFunnyWithChuck() {
+window.onload = function gettingFunnyWithChuck(){
 
   function buwHaHaHa () {
   var value = [Math.floor(Math.random() * 100)];
@@ -11,7 +11,7 @@ let hardyHar=[];
 var btn = document.querySelector("button");
 
   const randomJoke = 'id/'
-  const url = '//api.icndb.com/jokes'+ randomJoke
+  const url = 'http://api.icndb.com/jokes'+ randomJoke
 
   $.ajax({
     url: url
@@ -40,6 +40,8 @@ var btn = document.querySelector("button");
 
     console.log(jokes[jokeNum]);
     moreHardyHar(humorless);
+    buwHaHaHa();
+    gettingFunnyWithChuck();
     return jokes[jokeNum];
 
 
