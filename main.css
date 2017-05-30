@@ -41,6 +41,7 @@ html, body {
    height: 100px;
    flex-grow: 0;
    flex-shrink: 0;
-
-
+}
+#SFW{
+  color:white;
 }
