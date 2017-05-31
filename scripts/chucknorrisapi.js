@@ -11,7 +11,7 @@ var btn = document.querySelector("button");
 
 
   const randomJoke = 'id/'
-  const url = 'http://api.icndb.com/jokes'+ randomJoke
+  const url = '//api.icndb.com/jokes'+ randomJoke
 
   $.ajax({
     url: url
@@ -30,8 +30,8 @@ var btn = document.querySelector("button");
       for (let i = 0; i < idkLength; i++){
       jokes.push(comedy[i])
       }
-      console.log("jokes obj cat;", jokes[jokeNum].categories.length);
-      console.log("jokes obj;", jokes[jokeNum]);
+      // console.log("jokes obj cat;", jokes[jokeNum].categories.length);
+
 
       let humorless = jokes[jokeNum].joke;
       console.log("humorless;", humorless);
