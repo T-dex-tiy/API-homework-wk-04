@@ -27,9 +27,10 @@ html, body {
 }
 
 #input {
+  display:flex;
   margin-top: 300px;
   border-top: 300px;
-  width: 100%;
+  max-width: 100%;
   background:white;
   opacity: .5;
   border: 1px solid black;
@@ -42,6 +43,6 @@ html, body {
    flex-grow: 0;
    flex-shrink: 0;
 }
-#SFW{
+#noBadWurds{
   color:white;
 }

@@ -6,38 +6,43 @@ window.onload = function gettingFunnyWithChuck(){
 };
 
 let jokeNum =  buwHaHaHa();
-let hardyHar=[];
 var btn = document.querySelector("button");
+var radio=document.getElementById('SFW')
+let jokes= [];
+console.log();
 
 
   const randomJoke = 'id/'
-  const url = '//api.icndb.com/jokes'+ randomJoke
+  const url = 'https://api.icndb.com/jokes'
 
   $.ajax({
     url: url
   }).done(function(data){
-    // console.log('the returned data is:', data)
     btn.addEventListener('click', function(){
-      const comedy = data.value;
-      console.log("comedy data:", comedy);
-      hardyHar = comedy.filter(function(element, index){
-        return element.joke})
-      const idkLength = comedy.length;
-      const jokes= [];
+      let comedy = data.value;
+      let idkLength = comedy.length;
 
 
 
       for (let i = 0; i < idkLength; i++){
-      jokes.push(comedy[i])
+        console.log("run");
+      jokes.push(comedy[i])    
       }
-      // console.log("jokes obj cat;", jokes[jokeNum].categories.length);
+      console.log("jokes obj cat;", jokes[jokeNum].categories);
 
 
       let humorless = jokes[jokeNum].joke;
-      console.log("humorless;", humorless);
+      let explict=jokes[jokeNum].categories
 
       function moreHardyHar(humorless){
-      document.getElementById('input').innerHTML= humorless;
+        if(radio.checked==true&&explict=="explicit"){
+          // document.getElementById('input').innerHTML= humorless
+          console.log("not today", humorless);
+          console.log(humorless);
+          }else{
+            console.log(humorless, "2");
+            document.getElementById('input').innerHTML= humorless
+          }
       }
 
 
@@ -45,7 +50,13 @@ var btn = document.querySelector("button");
     moreHardyHar(humorless);
     buwHaHaHa();
     gettingFunnyWithChuck();
-    return jokes[jokeNum];
+    jokes=[]
+    comedy=[]
+    humorless=''
+    explict=''
+    console.log(jokes, comedy, humorless, explict, "end");
+    
+    // return jokes[jokeNum];
 
 
 
