@@ -1,15 +1,17 @@
 window.onload = function gettingFunnyWithChuck(){
 
   function buwHaHaHa () {
-  var value = [Math.floor(Math.random() * 100)];
+  var value = [Math.floor(Math.random() * 600)];
    return value;
 };
-
+let screen;
 let jokeNum =  buwHaHaHa();
 var btn = document.querySelector("button");
 var radio=document.getElementById('SFW')
 let jokes= [];
-console.log();
+let testJokes=[];
+let humorless=[];
+
 
 
   const randomJoke = 'id/'
@@ -19,30 +21,29 @@ console.log();
     url: url
   }).done(function(data){
     btn.addEventListener('click', function(){
+      console.log(humorless, "enter");
+      
       let comedy = data.value;
-      let idkLength = comedy.length;
-
-
-
-      for (let i = 0; i < idkLength; i++){
-        console.log("run");
-      jokes.push(comedy[i])    
-      }
-      console.log("jokes obj cat;", jokes[jokeNum].categories);
-
-
-      let humorless = jokes[jokeNum].joke;
-      let explict=jokes[jokeNum].categories
+      testJokes={...comedy}
+      let newHumor= Object.keys(testJokes).filter(key=>{  
+        if(testJokes[key].id==jokeNum){
+          console.log(testJokes[key]);
+          
+          return jokes.push(testJokes[key])
+        }
+      })
+      console.log(humorless[newHumor], "before");
 
       function moreHardyHar(humorless){
+        humorless = testJokes[newHumor].joke
+        let explict=testJokes[newHumor].categories
         if(radio.checked==true&&explict=="explicit"){
           // document.getElementById('input').innerHTML= humorless
-          console.log("not today", humorless);
-          console.log(humorless);
+          alert("This one is too much for work, Cindy in HR would not be happy. We are going to send you another one that Cindy will be okay with")
           }else{
-            console.log(humorless, "2");
-            document.getElementById('input').innerHTML= humorless
+            screen=document.getElementById('input').innerHTML= humorless
           }
+
       }
 
 
@@ -54,13 +55,10 @@ console.log();
     comedy=[]
     humorless=''
     explict=''
-    console.log(jokes, comedy, humorless, explict, "end");
+    console.log(screen);
+    console.log(humorless);
     
-    // return jokes[jokeNum];
-
-
-
-
+    return
   })
   })
 
